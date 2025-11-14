@@ -4,7 +4,6 @@ import '../css/app.css'
 import 'flowbite';
 import flowbitePlugin from "flowbite/plugin";
 import { createI18n } from 'vue-i18n'
-import ziggy from 'ziggy'
 
 const pages = import.meta.glob('../Inertia/Pages/**/*.vue', { eager: false });
 
@@ -28,7 +27,6 @@ createInertiaApp({
             .use(plugin)
             .use(flowbitePlugin)
             .use(i18n)
-            .use(ziggy)
             .mount(el)
     }
 })

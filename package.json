@@ -6,6 +6,7 @@
     "vue-i18n": "^11.1.12"
   },
   "devDependencies": {
+    "@laravel/vite-plugin-wayfinder": "^0.1.7",
     "@types/node": "^24.10.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "autoprefixer": "^10.4.21",

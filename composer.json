@@ -48,7 +48,7 @@
         "knplabs/github-api": "^3.16",
         "laravel/framework": "^12.36.0",
         "laravel/tinker": "^2.10.1",
-        "tightenco/ziggy": "^2.6"
+        "laravel/wayfinder": "^0.1.12"
     },
     "require-dev": {
         "roave/security-advisories": "dev-latest",
