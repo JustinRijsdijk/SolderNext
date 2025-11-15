@@ -385,7 +385,7 @@ anyRehash.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 
 /**
 * @see \App\Http\Controllers\ModController::anyAddVersion
- * @see app/Http/Controllers/ModController.php:216
+ * @see app/Http/Controllers/ModController.php:218
  * @route '/mod/add-version'
  */
 export const anyAddVersion = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -400,7 +400,7 @@ anyAddVersion.definition = {
 
 /**
 * @see \App\Http\Controllers\ModController::anyAddVersion
- * @see app/Http/Controllers/ModController.php:216
+ * @see app/Http/Controllers/ModController.php:218
  * @route '/mod/add-version'
  */
 anyAddVersion.url = (options?: RouteQueryOptions) => {
@@ -409,7 +409,7 @@ anyAddVersion.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ModController::anyAddVersion
- * @see app/Http/Controllers/ModController.php:216
+ * @see app/Http/Controllers/ModController.php:218
  * @route '/mod/add-version'
  */
 anyAddVersion.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -419,7 +419,7 @@ anyAddVersion.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 /**
 * @see \App\Http\Controllers\ModController::anyDeleteVersion
- * @see app/Http/Controllers/ModController.php:297
+ * @see app/Http/Controllers/ModController.php:301
  * @route '/mod/delete-version/{version_id}'
  */
 export const anyDeleteVersion = (args: { version_id: string | number } | [version_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -434,7 +434,7 @@ anyDeleteVersion.definition = {
 
 /**
 * @see \App\Http\Controllers\ModController::anyDeleteVersion
- * @see app/Http/Controllers/ModController.php:297
+ * @see app/Http/Controllers/ModController.php:301
  * @route '/mod/delete-version/{version_id}'
  */
 anyDeleteVersion.url = (args: { version_id: string | number } | [version_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -462,7 +462,7 @@ anyDeleteVersion.url = (args: { version_id: string | number } | [version_id: str
 
 /**
 * @see \App\Http\Controllers\ModController::anyDeleteVersion
- * @see app/Http/Controllers/ModController.php:297
+ * @see app/Http/Controllers/ModController.php:301
  * @route '/mod/delete-version/{version_id}'
  */
 anyDeleteVersion.post = (args: { version_id: string | number } | [version_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -472,7 +472,7 @@ anyDeleteVersion.post = (args: { version_id: string | number } | [version_id: st
 
 /**
 * @see \App\Http\Controllers\ModController::getModVersions
- * @see app/Http/Controllers/ModController.php:329
+ * @see app/Http/Controllers/ModController.php:333
  * @route '/mod/versions/{modSlug}'
  */
 export const getModVersions = (args: { modSlug: string | number } | [modSlug: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -487,7 +487,7 @@ getModVersions.definition = {
 
 /**
 * @see \App\Http\Controllers\ModController::getModVersions
- * @see app/Http/Controllers/ModController.php:329
+ * @see app/Http/Controllers/ModController.php:333
  * @route '/mod/versions/{modSlug}'
  */
 getModVersions.url = (args: { modSlug: string | number } | [modSlug: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -515,7 +515,7 @@ getModVersions.url = (args: { modSlug: string | number } | [modSlug: string | nu
 
 /**
 * @see \App\Http\Controllers\ModController::getModVersions
- * @see app/Http/Controllers/ModController.php:329
+ * @see app/Http/Controllers/ModController.php:333
  * @route '/mod/versions/{modSlug}'
  */
 getModVersions.get = (args: { modSlug: string | number } | [modSlug: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -524,7 +524,7 @@ getModVersions.get = (args: { modSlug: string | number } | [modSlug: string | nu
 })
 /**
 * @see \App\Http\Controllers\ModController::getModVersions
- * @see app/Http/Controllers/ModController.php:329
+ * @see app/Http/Controllers/ModController.php:333
  * @route '/mod/versions/{modSlug}'
  */
 getModVersions.head = (args: { modSlug: string | number } | [modSlug: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({

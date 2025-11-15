@@ -41,7 +41,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Build extends Model
 {
-    const NOT_FOUND_CACHE_VALUE = 'not_found';
+    public const NOT_FOUND_CACHE_VALUE = 'not_found';
 
     protected $guarded = [];
 

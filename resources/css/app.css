@@ -1,4 +1,4 @@
-@import 'flowbite/src/themes/default.css';
+@import "flowbite/src/themes/default.css";
 
 @tailwind base;
 @tailwind components;

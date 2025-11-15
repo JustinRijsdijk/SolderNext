@@ -10,7 +10,7 @@ use Inertia\Inertia;
 
 class LoginController
 {
-    public function     index()
+    public function index()
     {
         return Inertia::render('Auth/Login');
     }
@@ -20,7 +20,7 @@ class LoginController
         $data = $request->validated();
 
         $credentials = Arr::only($data, ['email', 'password']);
-        $remember    = Arr::get($data, 'remember');
+        $remember = Arr::get($data, 'remember');
 
         if (auth()->attempt($credentials, $remember)) {
             $user = auth()->user();
@@ -29,11 +29,11 @@ class LoginController
 
             request()->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return Inertia::location(route('dashboard'));
         }
 
         return redirect()
-            ->route('v1.authentication.login.index')
+            ->back()
             ->withErrors(['Invalid email or password'], 'login_failed')
             ->onlyInput('email');
     }

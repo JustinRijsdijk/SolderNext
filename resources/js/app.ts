@@ -1,15 +1,16 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
-import '../css/app.css'
+import '@/css/app.css'
 import 'flowbite';
-import flowbitePlugin from "flowbite/plugin";
-import { createI18n } from 'vue-i18n'
+import {i18n} from '@/js/utils/i18n'
 
+import { useDarkMode } from '@/Inertia/Composables/useDarkMode';
+
+//@ts-ignore
 const pages = import.meta.glob('../Inertia/Pages/**/*.vue', { eager: false });
 
-const i18n = createI18n({
-    // something vue-i18n options here ...
-})
+const { initTheme } = useDarkMode();
+initTheme();
 
 createInertiaApp({
     resolve: name => {
@@ -25,7 +26,6 @@ createInertiaApp({
     setup({el, App, props, plugin}) {
         createApp({render: () => h(App, props)})
             .use(plugin)
-            .use(flowbitePlugin)
             .use(i18n)
             .mount(el)
     }

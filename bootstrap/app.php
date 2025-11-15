@@ -10,9 +10,11 @@ use App\Http\Middleware\SolderModpacks;
 use App\Http\Middleware\SolderMods;
 use App\Http\Middleware\SolderUsers;
 use App\Providers\AppServiceProvider;
+use App\Translator\JsonLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Translation\Translator;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -41,4 +43,18 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
-    })->create();
+    })
+    ->withBindings([
+        'translator' => function ($app) {
+            $loader = new JsonLoader(
+                $app['files'],
+                $app->langPath(),
+            );
+
+            $translator = new Translator($loader, $app['config']['app.locale']);
+            $translator->setFallback($app['config']['app.fallback_locale']);
+
+            return $translator;
+        },
+    ])
+    ->create();

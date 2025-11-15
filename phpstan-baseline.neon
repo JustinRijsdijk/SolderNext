@@ -1,0 +1,49 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/KeyController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 4
+			path: app/Http/Controllers/ModController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 8
+			path: app/Http/Controllers/ModpackController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 10
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Contracts\\Auth\\Authenticatable\:\:\$permission\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Listeners/V1/Authentication/Login/CheckForSoftwareUpdateListener.php
+
+		-
+			message: '#^PHPDoc type array of property App\\Models\\User\:\:\$with is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$with\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/User.php
+
+		-
+			message: '#^Method App\\Translator\\JsonLoader\:\:load\(\) should return array but returns Illuminate\\Support\\Collection\<\(int\|string\), mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Translator/JsonLoader.php

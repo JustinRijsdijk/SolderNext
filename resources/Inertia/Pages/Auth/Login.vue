@@ -2,10 +2,15 @@
 import Logo from '@/Inertia/Components/Logo.vue';
 import {useForm} from "@inertiajs/vue3";
 import {store} from "@/js/routes/v1/authentication/login";
+import {
+  FwbAlert,
+  FwbButton,
+} from "flowbite-vue";
 
 const form = useForm({
-  email: "admin@admin.com",
-  password: "admin",
+  email: "",
+  password: '',
+  remember: false,
 });
 
 const submit = () => {
@@ -26,6 +31,16 @@ const submit = () => {
             Log in to use Solder Next
           </h1>
           <form class="space-y-4 md:space-y-6" action="#">
+            <FwbAlert type="danger" v-for="(error, key) in $page.props.errors" :key="key">
+              <template #title>
+                {{key}}
+              </template>
+              <template #default>
+                <ul class="mt-2 list-disc list-inside space-y-1">
+                  <li v-for="message in error" :key="message">{{message}}</li>
+                </ul>
+              </template>
+            </FwbAlert>
             <div>
               <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
               <input
@@ -53,23 +68,25 @@ const submit = () => {
             <div class="flex items-center justify-between">
               <div class="flex items-start">
                 <div class="flex items-center h-5">
-                  <input id="remember" aria-describedby="remember" type="checkbox" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800" required>
+                  <input
+                      id="remember"
+                      v-model="form.remember"
+                      aria-describedby="remember"
+                      type="checkbox"
+                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
+                  >
                 </div>
                 <div class="ml-3 text-sm">
                   <label for="remember" class="text-gray-500 dark:text-gray-300">Remember me</label>
                 </div>
               </div>
-              <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</a>
+              <a href="#" class="text-sm font-medium text-primary-600 hover:underline dark:text-gray-400">Forgot password?</a>
             </div>
-            <button
-                @click="submit"
-                type="button"
-                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-            >
-              Sign in
-            </button>
+            <FwbButton color="default" @click="submit" class="w-full">
+              Log in
+            </FwbButton>
             <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-              Don’t have an account yet? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+              Don’t have an account yet? <a href="#" class="font-medium hover:underline">Sign up</a>
             </p>
           </form>
         </div>

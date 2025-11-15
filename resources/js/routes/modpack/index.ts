@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, applyUrlDefaults } from './../../wayfinder'
 /**
 * @see \App\Http\Controllers\ModpackController::list
- * @see app/Http/Controllers/ModpackController.php:41
+ * @see app/Http/Controllers/ModpackController.php:43
  * @route '/modpack/list'
  */
 export const list = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ list.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::list
- * @see app/Http/Controllers/ModpackController.php:41
+ * @see app/Http/Controllers/ModpackController.php:43
  * @route '/modpack/list'
  */
 list.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ list.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ModpackController::list
- * @see app/Http/Controllers/ModpackController.php:41
+ * @see app/Http/Controllers/ModpackController.php:43
  * @route '/modpack/list'
  */
 list.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ list.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\ModpackController::list
- * @see app/Http/Controllers/ModpackController.php:41
+ * @see app/Http/Controllers/ModpackController.php:43
  * @route '/modpack/list'
  */
 list.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ list.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\ModpackController::view
- * @see app/Http/Controllers/ModpackController.php:48
+ * @see app/Http/Controllers/ModpackController.php:50
  * @route '/modpack/view/{modpack_id}'
  */
 export const view = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -59,7 +59,7 @@ view.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::view
- * @see app/Http/Controllers/ModpackController.php:48
+ * @see app/Http/Controllers/ModpackController.php:50
  * @route '/modpack/view/{modpack_id}'
  */
 view.url = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -87,7 +87,7 @@ view.url = (args: { modpack_id: string | number } | [modpack_id: string | number
 
 /**
 * @see \App\Http\Controllers\ModpackController::view
- * @see app/Http/Controllers/ModpackController.php:48
+ * @see app/Http/Controllers/ModpackController.php:50
  * @route '/modpack/view/{modpack_id}'
  */
 view.get = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -96,7 +96,7 @@ view.get = (args: { modpack_id: string | number } | [modpack_id: string | number
 })
 /**
 * @see \App\Http\Controllers\ModpackController::view
- * @see app/Http/Controllers/ModpackController.php:48
+ * @see app/Http/Controllers/ModpackController.php:50
  * @route '/modpack/view/{modpack_id}'
  */
 view.head = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -106,7 +106,7 @@ view.head = (args: { modpack_id: string | number } | [modpack_id: string | numbe
 
 /**
 * @see \App\Http\Controllers\ModpackController::build
- * @see app/Http/Controllers/ModpackController.php:64
+ * @see app/Http/Controllers/ModpackController.php:66
  * @route '/modpack/build/{build_id}'
  */
 export const build = (args: { build_id: string | number } | [build_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -121,7 +121,7 @@ build.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::build
- * @see app/Http/Controllers/ModpackController.php:64
+ * @see app/Http/Controllers/ModpackController.php:66
  * @route '/modpack/build/{build_id}'
  */
 build.url = (args: { build_id: string | number } | [build_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -149,7 +149,7 @@ build.url = (args: { build_id: string | number } | [build_id: string | number ] 
 
 /**
 * @see \App\Http\Controllers\ModpackController::build
- * @see app/Http/Controllers/ModpackController.php:64
+ * @see app/Http/Controllers/ModpackController.php:66
  * @route '/modpack/build/{build_id}'
  */
 build.get = (args: { build_id: string | number } | [build_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -158,7 +158,7 @@ build.get = (args: { build_id: string | number } | [build_id: string | number ] 
 })
 /**
 * @see \App\Http\Controllers\ModpackController::build
- * @see app/Http/Controllers/ModpackController.php:64
+ * @see app/Http/Controllers/ModpackController.php:66
  * @route '/modpack/build/{build_id}'
  */
 build.head = (args: { build_id: string | number } | [build_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -168,7 +168,7 @@ build.head = (args: { build_id: string | number } | [build_id: string | number ]
 
 /**
 * @see \App\Http\Controllers\ModpackController::addBuild
- * @see app/Http/Controllers/ModpackController.php:187
+ * @see app/Http/Controllers/ModpackController.php:189
  * @route '/modpack/add-build/{modpack_id}'
  */
 export const addBuild = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -183,7 +183,7 @@ addBuild.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::addBuild
- * @see app/Http/Controllers/ModpackController.php:187
+ * @see app/Http/Controllers/ModpackController.php:189
  * @route '/modpack/add-build/{modpack_id}'
  */
 addBuild.url = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -211,7 +211,7 @@ addBuild.url = (args: { modpack_id: string | number } | [modpack_id: string | nu
 
 /**
 * @see \App\Http\Controllers\ModpackController::addBuild
- * @see app/Http/Controllers/ModpackController.php:187
+ * @see app/Http/Controllers/ModpackController.php:189
  * @route '/modpack/add-build/{modpack_id}'
  */
 addBuild.get = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -220,7 +220,7 @@ addBuild.get = (args: { modpack_id: string | number } | [modpack_id: string | nu
 })
 /**
 * @see \App\Http\Controllers\ModpackController::addBuild
- * @see app/Http/Controllers/ModpackController.php:187
+ * @see app/Http/Controllers/ModpackController.php:189
  * @route '/modpack/add-build/{modpack_id}'
  */
 addBuild.head = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -230,7 +230,7 @@ addBuild.head = (args: { modpack_id: string | number } | [modpack_id: string | n
 
 /**
 * @see \App\Http\Controllers\ModpackController::create
- * @see app/Http/Controllers/ModpackController.php:262
+ * @see app/Http/Controllers/ModpackController.php:264
  * @route '/modpack/create'
  */
 export const create = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -245,7 +245,7 @@ create.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::create
- * @see app/Http/Controllers/ModpackController.php:262
+ * @see app/Http/Controllers/ModpackController.php:264
  * @route '/modpack/create'
  */
 create.url = (options?: RouteQueryOptions) => {
@@ -254,7 +254,7 @@ create.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\ModpackController::create
- * @see app/Http/Controllers/ModpackController.php:262
+ * @see app/Http/Controllers/ModpackController.php:264
  * @route '/modpack/create'
  */
 create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -263,7 +263,7 @@ create.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\ModpackController::create
- * @see app/Http/Controllers/ModpackController.php:262
+ * @see app/Http/Controllers/ModpackController.php:264
  * @route '/modpack/create'
  */
 create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -273,7 +273,7 @@ create.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\ModpackController::edit
- * @see app/Http/Controllers/ModpackController.php:315
+ * @see app/Http/Controllers/ModpackController.php:317
  * @route '/modpack/edit/{modpack_id}'
  */
 export const edit = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -288,7 +288,7 @@ edit.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::edit
- * @see app/Http/Controllers/ModpackController.php:315
+ * @see app/Http/Controllers/ModpackController.php:317
  * @route '/modpack/edit/{modpack_id}'
  */
 edit.url = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -316,7 +316,7 @@ edit.url = (args: { modpack_id: string | number } | [modpack_id: string | number
 
 /**
 * @see \App\Http\Controllers\ModpackController::edit
- * @see app/Http/Controllers/ModpackController.php:315
+ * @see app/Http/Controllers/ModpackController.php:317
  * @route '/modpack/edit/{modpack_id}'
  */
 edit.get = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -325,7 +325,7 @@ edit.get = (args: { modpack_id: string | number } | [modpack_id: string | number
 })
 /**
 * @see \App\Http\Controllers\ModpackController::edit
- * @see app/Http/Controllers/ModpackController.php:315
+ * @see app/Http/Controllers/ModpackController.php:317
  * @route '/modpack/edit/{modpack_id}'
  */
 edit.head = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -335,7 +335,7 @@ edit.head = (args: { modpack_id: string | number } | [modpack_id: string | numbe
 
 /**
 * @see \App\Http\Controllers\ModpackController::deleteMethod
- * @see app/Http/Controllers/ModpackController.php:377
+ * @see app/Http/Controllers/ModpackController.php:379
  * @route '/modpack/delete/{modpack_id}'
  */
 export const deleteMethod = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -350,7 +350,7 @@ deleteMethod.definition = {
 
 /**
 * @see \App\Http\Controllers\ModpackController::deleteMethod
- * @see app/Http/Controllers/ModpackController.php:377
+ * @see app/Http/Controllers/ModpackController.php:379
  * @route '/modpack/delete/{modpack_id}'
  */
 deleteMethod.url = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions) => {
@@ -378,7 +378,7 @@ deleteMethod.url = (args: { modpack_id: string | number } | [modpack_id: string 
 
 /**
 * @see \App\Http\Controllers\ModpackController::deleteMethod
- * @see app/Http/Controllers/ModpackController.php:377
+ * @see app/Http/Controllers/ModpackController.php:379
  * @route '/modpack/delete/{modpack_id}'
  */
 deleteMethod.get = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -387,7 +387,7 @@ deleteMethod.get = (args: { modpack_id: string | number } | [modpack_id: string 
 })
 /**
 * @see \App\Http\Controllers\ModpackController::deleteMethod
- * @see app/Http/Controllers/ModpackController.php:377
+ * @see app/Http/Controllers/ModpackController.php:379
  * @route '/modpack/delete/{modpack_id}'
  */
 deleteMethod.head = (args: { modpack_id: string | number } | [modpack_id: string | number ] | string | number, options?: RouteQueryOptions): RouteDefinition<'head'> => ({

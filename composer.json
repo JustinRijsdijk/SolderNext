@@ -51,15 +51,15 @@
         "laravel/tinker": "^2.10.1"
     },
     "require-dev": {
-        "roave/security-advisories": "dev-latest",
         "barryvdh/laravel-debugbar": "^3.16.0",
         "barryvdh/laravel-ide-helper": "^3.6.0",
         "fakerphp/faker": "^1.24.1",
         "larastan/larastan": "^3.8.0",
-        "laravel/pint": "^1.25.1",
+        "laravel/pint": "^1.25",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.8.2",
-        "phpunit/phpunit": "^11.5.43"
+        "phpunit/phpunit": "^11.5.43",
+        "roave/security-advisories": "dev-latest"
     },
     "config": {
         "optimize-autoloader": true,
@@ -105,6 +105,16 @@
         "ide": [
             "@php artisan ide-helper:generate",
             "@php artisan ide-helper:meta"
+        ],
+        "code:quality": [
+            "@php ./vendor/bin/phpstan analyse",
+            "@php ./vendor/bin/pint --parallel"
+        ],
+        "code:quality:fix": [
+            "@php ./vendor/bin/pint --parallel --repair"
+        ],
+        "code:quality:baseline": [
+            "@php ./vendor/bin/phpstan analyse --generate-baseline -vv"
         ]
     }
 }

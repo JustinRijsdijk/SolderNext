@@ -3,8 +3,7 @@
 use App\Models\UserPermission;
 use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration
-{
+return new class () extends Migration {
     /**
      * Make changes to the database.
      */
@@ -25,7 +24,7 @@ return new class extends Migration
             $table->nullableTimestamps();
         });
 
-        $perm = new UserPermission;
+        $perm = new UserPermission();
         $perm->user_id = 1;
         $perm->solder_full = true;
         $perm->save();

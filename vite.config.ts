@@ -15,7 +15,7 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/js/app.js',
+                'resources/js/app.ts',
                 'resources/css/app.css'
             ],
             refresh: true
@@ -27,6 +27,7 @@ export default defineConfig({
         alias: {
             '~': path.resolve(__dirname, ''),
             '@': path.resolve(__dirname, 'resources'),
+            '@lang': path.resolve(__dirname, 'lang'),
         },
     },
 })
