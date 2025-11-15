@@ -73,7 +73,7 @@ class ModController extends Controller
             return redirect('mod/create')->withErrors($validation->messages());
         }
 
-        $mod = new Mod;
+        $mod = new Mod();
         $mod->name = Str::slug(Request::input('name'));
         $mod->pretty_name = Request::input('pretty_name');
         $mod->author = Request::input('author');
@@ -170,6 +170,8 @@ class ModController extends Controller
             ]);
         }
 
+        $providedfile_md5 = false;
+
         if (empty($md5)) {
             $md5Request = $this->mod_md5($ver->mod, $ver->version);
             if ($md5Request['success']) {
@@ -247,6 +249,8 @@ class ModController extends Controller
             ]);
         }
 
+        $pfile_md5 = null;
+
         if (empty($md5)) {
             $file_md5 = $this->mod_md5($mod, $version);
             if ($file_md5['success']) {
@@ -257,7 +261,7 @@ class ModController extends Controller
             $pfile_md5 = ! $file_md5['success'] ? 'Null' : $file_md5['md5'];
         }
 
-        $ver = new Modversion;
+        $ver = new Modversion();
         $ver->mod_id = $mod->id;
         $ver->version = $version;
 

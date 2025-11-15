@@ -28,8 +28,10 @@ class ModpackController extends Controller
     public function __construct()
     {
         $this->middleware('solder_modpacks');
-        $this->middleware('modpack',
-            ['only' => ['getView', 'getDelete', 'postDelete', 'getEdit', 'postEdit', 'getAddBuild', 'postAddBuild']]);
+        $this->middleware(
+            'modpack',
+            ['only' => ['getView', 'getDelete', 'postDelete', 'getEdit', 'postEdit', 'getAddBuild', 'postAddBuild']]
+        );
         $this->middleware('build', ['only' => ['anyBuild']]);
     }
 
@@ -239,7 +241,7 @@ class ModpackController extends Controller
         }
 
         $clone = Request::input('clone');
-        $build = new Build;
+        $build = new Build();
         $build->modpack_id = $modpack->id;
         $build->version = Request::input('version');
 
@@ -283,7 +285,7 @@ class ModpackController extends Controller
             return redirect('modpack/create')->withErrors($validation->messages());
         }
 
-        $modpack = new Modpack;
+        $modpack = new Modpack();
         $modpack->name = Request::input('name');
         $modpack->slug = Str::slug(Request::input('slug'));
         $modpack->hidden = request()->boolean('hidden');
@@ -487,6 +489,7 @@ class ModpackController extends Controller
                         'version' => $ver->version,
                     ]);
                 }
+                // no break
             case 'recommended': // Set recommended build
                 $modpack = Modpack::find(Request::input('modpack'));
                 $new_version = Request::input('recommended');
@@ -536,5 +539,7 @@ class ModpackController extends Controller
                     'success' => 'Updated build '.$build->version."'s private status.",
                 ]);
         }
+
+        return Response()->json(['']);
     }
 }

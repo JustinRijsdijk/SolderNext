@@ -8,6 +8,7 @@ use App\Http\Controllers\ModController;
 use App\Http\Controllers\ModpackController;
 use App\Http\Controllers\SolderController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\V1\Authentication\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -86,6 +87,18 @@ Route::middleware('auth')->group(function () {
 });
 
 // Authentication routes
-Route::get('login', [AuthController::class, 'showLogin'])->name('login');
-Route::post('login', [AuthController::class, 'postLogin']);
 Route::get('logout', [AuthController::class, 'doLogout'])->name('logout');
+Route::redirect('/login', '/authentication/login')
+    ->name('login');
+
+Route::name('v1.')
+    ->group(function () {
+        Route::name('authentication.')
+            ->prefix('authentication')
+            ->group(function () {
+                Route::get('login', [LoginController::class, 'index'])
+                    ->name('login.index');
+                Route::post('login', [LoginController::class, 'store'])
+                    ->name('login.store');
+            });
+    });

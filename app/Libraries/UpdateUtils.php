@@ -3,6 +3,7 @@
 namespace App\Libraries;
 
 use Github\Client;
+use Illuminate\Support\Arr;
 use RuntimeException;
 
 class UpdateUtils
@@ -11,7 +12,7 @@ class UpdateUtils
 
     public static function getGithubClient(): Client
     {
-        return self::$githubClient ??= new Client;
+        return self::$githubClient ??= new Client();
     }
 
     public static function getUpdateCheck($forceRefresh = false): bool
@@ -23,7 +24,7 @@ class UpdateUtils
         $allVersions = self::getAllVersions();
 
         if (! array_key_exists('error', $allVersions)) {
-            if (version_compare(self::getLatestVersion()['name'], SOLDER_VERSION, '>')) {
+            if (version_compare(Arr::get(self::getLatestVersion(), 'name'), SOLDER_VERSION, '>')) {
                 return true;
             }
         }
@@ -31,14 +32,14 @@ class UpdateUtils
         return false;
     }
 
-    public static function getLatestVersion()
+    public static function getLatestVersion(): ?array
     {
         $allVersions = self::getAllVersions();
         if (array_key_exists('error', $allVersions)) {
             return $allVersions;
         }
 
-        return $allVersions[0];
+        return Arr::get($allVersions, '0');
     }
 
     public static function getAllVersions()
@@ -47,7 +48,7 @@ class UpdateUtils
 
         try {
             return cache()->remember('update:github:tags', now()->addMinutes(60), function () use ($client) {
-                return $client->repo()->tags('technicpack', 'technicsolder');
+                return $client->repo()->tags('justinrijsdijk', 'soldernext');
             });
         } catch (RuntimeException $e) {
             return ['error' => 'Unable to fetch versions from Github: '.$e->getMessage()];
@@ -60,7 +61,7 @@ class UpdateUtils
 
         try {
             return cache()->remember('update:github:changelog:'.$branch, now()->addMinutes(60), function () use ($client, $branch) {
-                return $client->repo()->commits()->all('technicpack', 'technicsolder', ['sha' => $branch]);
+                return $client->repo()->commits()->all('justinrijsdijk', 'soldernext', ['sha' => $branch]);
             });
         } catch (RuntimeException $e) {
             return ['error' => 'Unable to fetch changelog from Github: '.$e->getMessage()];
