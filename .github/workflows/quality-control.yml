@@ -1,4 +1,4 @@
-name: Tests
+name: Code Quality Control
 
 on:
   push:
