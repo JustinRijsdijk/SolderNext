@@ -44,8 +44,5 @@ jobs:
           max_attempts: 5
           command: composer update --${{ matrix.stability }} --no-interaction --no-progress
 
-      - name: Generate app key
-        run: php artisan key:generate
-
-      - name: Run tests
+      - name: Run code quality tooling
         run: composer run code:quality
