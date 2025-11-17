@@ -540,6 +540,6 @@ class ModpackController extends Controller
                 ]);
         }
 
-        return Response()->json(['']);
+        return response()->json(['error' => 'Unknown action.'], 400);
     }
 }
