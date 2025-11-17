@@ -27,6 +27,7 @@ export default defineConfig({
         alias: {
             '~': path.resolve(__dirname, ''),
             '@': path.resolve(__dirname, 'resources'),
+            '@node_modules': path.resolve(__dirname, 'node_modules'),
             '@lang': path.resolve(__dirname, 'lang'),
         },
     },

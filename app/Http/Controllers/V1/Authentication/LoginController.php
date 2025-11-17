@@ -34,7 +34,10 @@ class LoginController
 
         return redirect()
             ->back()
-            ->withErrors(['Invalid email or password'], 'login_failed')
+            ->withErrors([
+                'email' => trans('auth.invalid_credentials'),
+                'password' => trans('auth.invalid_credentials'),
+            ])
             ->onlyInput('email');
     }
 }

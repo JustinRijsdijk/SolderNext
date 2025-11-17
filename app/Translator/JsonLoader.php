@@ -5,22 +5,49 @@ declare(strict_types=1);
 namespace App\Translator;
 
 use Illuminate\Translation\FileLoader;
+use JsonException;
 
 class JsonLoader extends FileLoader
 {
-    public function load($locale, $group, $namespace = null)
+    public function load($locale, $group, $namespace = null): array
     {
-        $lines = collect(parent::load($locale, $group, $namespace));
+        // Load default Laravel lines first (PHP files)
+        $base = parent::load($locale, $group, $namespace);
 
-        $path = lang_path().'/'.$locale;
+        $jsonDir = lang_path($locale);
+        if (! is_dir($jsonDir)) {
+            return $base;
+        }
 
-        foreach (glob($path.'/*.json') as $file) {
-            $json = json_decode(file_get_contents($file), true);
-            if (is_array($json)) {
-                $lines->push($json);
+        $jsonFiles = glob($jsonDir . '/*.json');
+        if ($jsonFiles === false) {
+            return $base;
+        }
+
+        $merged = [];
+
+        foreach ($jsonFiles as $file) {
+            try {
+                $content = json_decode(
+                    file_get_contents($file),
+                    true,
+                    512,
+                    JSON_THROW_ON_ERROR
+                );
+            } catch (JsonException $e) {
+                throw $e;
+            }
+
+            if (is_array($content)) {
+                $merged[] = $content;
             }
         }
 
-        return $lines;
+        if (! empty($merged)) {
+            $jsonMerged = array_replace_recursive(...$merged);
+            return array_replace_recursive($base, $jsonMerged);
+        }
+
+        return $base;
     }
 }
