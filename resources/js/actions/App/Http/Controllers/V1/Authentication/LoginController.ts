@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
  * @route '/authentication/login'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -59,7 +59,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
  * @route '/authentication/login'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -68,7 +68,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
  * @route '/authentication/login'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({

@@ -12,6 +12,7 @@ class LoginController
 {
     public function index()
     {
+        dd(trans('auth'));
         return Inertia::render('Auth/Login');
     }
 

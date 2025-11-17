@@ -490,6 +490,7 @@ class ModpackController extends Controller
                     ]);
                 }
                 // Intentional fallthrough to 'recommended' case
+                // no break
             case 'recommended': // Set recommended build
                 $modpack = Modpack::find(Request::input('modpack'));
                 $new_version = Request::input('recommended');
