@@ -10,11 +10,11 @@ use App\Http\Middleware\SolderModpacks;
 use App\Http\Middleware\SolderMods;
 use App\Http\Middleware\SolderUsers;
 use App\Providers\AppServiceProvider;
+use App\Translation\Translator;
 use App\Translator\JsonLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
-use Illuminate\Translation\Translator;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(

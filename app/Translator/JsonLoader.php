@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Translator;
 
-use Illuminate\Translation\FileLoader;
+use App\Translation\FileLoader;
 use JsonException;
 
 class JsonLoader extends FileLoader
@@ -24,7 +24,7 @@ class JsonLoader extends FileLoader
             return $base;
         }
 
-        $merged = [];
+        $jsonStrings = [];
 
         foreach ($jsonFiles as $file) {
             try {
@@ -39,13 +39,12 @@ class JsonLoader extends FileLoader
             }
 
             if (is_array($content)) {
-                $merged[] = $content;
+                $jsonStrings[] = $content;
             }
         }
 
-        if (! empty($merged)) {
-            $jsonMerged = array_replace_recursive(...$merged);
-            return array_replace_recursive($base, $jsonMerged);
+        if (! empty($jsonStrings)) {
+            return array_replace_recursive(...$jsonStrings);
         }
 
         return $base;
