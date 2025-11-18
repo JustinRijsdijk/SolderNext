@@ -6,13 +6,13 @@ namespace App\Http\Controllers\V1\Authentication;
 
 use App\Http\Requests\V1\Authentication\LoginRequest;
 use Illuminate\Support\Arr;
+use Illuminate\Translation\Translator;
 use Inertia\Inertia;
 
 class LoginController
 {
     public function index()
     {
-        //        dd(trans('auth'));
         return Inertia::render('Auth/Login');
     }
 

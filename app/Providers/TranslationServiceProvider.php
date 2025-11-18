@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Translation;
+namespace App\Providers;
 
+use Illuminate\Translation\Translator;
+use App\Translator\JsonLoader;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
@@ -40,7 +42,7 @@ class TranslationServiceProvider extends ServiceProvider implements DeferrablePr
     protected function registerLoader()
     {
         $this->app->singleton('translation.loader', function ($app) {
-            return new FileLoader($app['files'], [__DIR__.'/lang', $app['path.lang']]);
+            return new JsonLoader($app['files'], [__DIR__.'/lang', $app['path.lang']]);
         });
     }
 
