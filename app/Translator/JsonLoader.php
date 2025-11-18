@@ -28,7 +28,7 @@ class JsonLoader extends FileLoader
             $jsonFiles = glob($jsonDir . '/*.json') ?: [];
         }
 
-        if ($jsonFiles === false || $jsonFiles === []) {
+        if ($jsonFiles === []) {
             return $base;
         }
 
@@ -43,7 +43,6 @@ class JsonLoader extends FileLoader
                     JSON_THROW_ON_ERROR
                 );
             } catch (JsonException $e) {
-                // Optionally log here
                 throw $e;
             }
 
