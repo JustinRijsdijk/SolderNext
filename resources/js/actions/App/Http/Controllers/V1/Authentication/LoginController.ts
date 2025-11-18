@@ -1,7 +1,7 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition } from './../../../../../../wayfinder'
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::index
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:14
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:13
  * @route '/authentication/login'
  */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -16,7 +16,7 @@ index.definition = {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::index
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:14
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:13
  * @route '/authentication/login'
  */
 index.url = (options?: RouteQueryOptions) => {
@@ -25,7 +25,7 @@ index.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::index
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:14
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:13
  * @route '/authentication/login'
  */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
@@ -34,7 +34,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 })
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::index
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:14
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:13
  * @route '/authentication/login'
  */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
@@ -44,7 +44,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
  * @route '/authentication/login'
  */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
@@ -59,7 +59,7 @@ store.definition = {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
  * @route '/authentication/login'
  */
 store.url = (options?: RouteQueryOptions) => {
@@ -68,7 +68,7 @@ store.url = (options?: RouteQueryOptions) => {
 
 /**
 * @see \App\Http\Controllers\V1\Authentication\LoginController::store
- * @see app/Http/Controllers/V1/Authentication/LoginController.php:19
+ * @see app/Http/Controllers/V1/Authentication/LoginController.php:18
  * @route '/authentication/login'
  */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
