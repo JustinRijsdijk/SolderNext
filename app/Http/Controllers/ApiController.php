@@ -232,6 +232,7 @@ class ApiController extends Controller
         $buildCacheKey = 'modpack:'.$modpackSlug.':build:'.$buildName;
 
         $build = Cache::get($buildCacheKey);
+        $modpack = null;
 
         if (! $build) {
             $modpack = Cache::remember('modpack:'.$modpackSlug, now()->addMinutes(5), function () use ($modpackSlug) {

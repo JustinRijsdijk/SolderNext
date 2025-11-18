@@ -1,0 +1,37 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/ClientController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Http/Controllers/KeyController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 4
+			path: app/Http/Controllers/ModController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 8
+			path: app/Http/Controllers/ModpackController.php
+
+		-
+			message: '#^Parameter \#1 \$messages of class Illuminate\\Support\\MessageBag constructor expects array\<string, array\<string\>\|Illuminate\\Contracts\\Support\\Arrayable\|string\>, array\<int, string\> given\.$#'
+			identifier: argument.type
+			count: 10
+			path: app/Http/Controllers/UserController.php
+
+		-
+			message: '#^PHPDoc type array of property App\\Models\\User\:\:\$with is not covariant with PHPDoc type list\<string\> of overridden property Illuminate\\Database\\Eloquent\\Model\:\:\$with\.$#'
+			identifier: property.phpDocType
+			count: 1
+			path: app/Models/User.php

@@ -48,5 +48,4 @@ return [
      * mess with this, but you might want to disable the mod API functionalities for privacy reasons.
      */
     'disable_mod_api' => filter_var(env('SOLDER_DISABLE_MOD_API', 'false'), FILTER_VALIDATE_BOOLEAN),
-
 ];

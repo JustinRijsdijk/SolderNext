@@ -35,7 +35,7 @@ You can also check out the original repo over [here](https://github.com/TechnicP
 Requirements
 -------------
 
-* PHP 8.2 or higher
+* PHP 8.4 or higher
 * [Composer](https://getcomposer.org/)
 * `unzip` package
 * Ctype PHP Extension
